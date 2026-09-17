@@ -120,12 +120,11 @@ vimcmd_replace_symbol = '[ ](bold fg:edit_select)'
 vimcmd_visual_symbol = '[ ](bold fg:edit_select)'
 
 [cmd_duration]
-show_milliseconds = true
-style = "italic"
 disabled = false
-show_notifications = true
-min_time_to_notify = 1000
-format = "[[$duration](fg:time italic)]($style)"
+min_time_to_notify = 5000
+show_milliseconds = false
+show_notifications = false
+format = "[[$duration](fg:time italic red)]($style)"
 
 [palettes.me]
 edit         = "172"
