@@ -30,7 +30,7 @@ die() {
   exit 1
 }
 
-while getopts ":h" opt ; do
+while getopts ":h" opt; do
   case $opt in
     h)
       usage
@@ -56,9 +56,8 @@ shift
 
 [ $# -eq 0 ] || die "too many args; run with -h for help"
 
-
-command -v cf >/dev/null || die "cf not found"
-command -v colortail >/dev/null || die "colortail not found"
+command -v cf > /dev/null || die "cf not found"
+command -v colortail > /dev/null || die "colortail not found"
 [ -f "$cfg_file" ] || die "config file not found or is not a file: $cfg_file"
 
 case $(uname) in
