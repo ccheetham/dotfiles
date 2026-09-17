@@ -12,9 +12,9 @@ export HOMEBREW_HOME=$(brew --prefix)
 alias b='brew'
 
 bsync() {
-  b update
-  b upgrade
-  b cleanup
+  b update --verbose || return 1
+  b upgrade --no-ask --greedy --verbose || return 2
+  b cleanup || return 3
 }
 
 # TODO: this isn't brew specific
