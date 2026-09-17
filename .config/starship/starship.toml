@@ -1,9 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-command_timeout = 5000
 add_newline = true
-
+command_timeout = 5000
 palette = 'me'
+
 format = """
 ╭──── \
 [](fg:path)\
@@ -24,16 +24,16 @@ disabled = false
 style = "bg:who fg:text"
 
 [os.symbols]
-Windows = ""
-Ubuntu = "󰕈"
-Raspbian = "󰐿"
-Macos = "󰀵"
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
 Alpine = ""
 Arch = "󰣇"
 Debian = "󰣚"
+Fedora = "󰣛"
+Gentoo = "󰣨"
+Linux = "󰌽"
+Macos = "󰀵"
+Raspbian = "󰐿"
+Ubuntu = "󰕈"
+Windows = ""
 
 [username]
 show_always = true
@@ -42,6 +42,7 @@ style_root = "bg:who fg:text"
 format = '[ $user]($style)'
 
 [directory]
+disabled = false
 style = "bg:path fg:text"
 format = "[$path]($style)"
 truncation_length = 3
@@ -56,55 +57,46 @@ truncation_symbol = "…/"
 "code" = "󰲋 "
 
 [git_branch]
+disabled = false
 symbol = ""
-style = "bg:vcs"
 format = '[[ $symbol $branch](fg:text bg:vcs)]($style)'
 
 [git_status]
-use_git_executable = true
+disabled = false
 modified = "${count}"
-style = "bg:vcs"
 format = '[[ $all_status$ahead_behind](fg:text bg:vcs)]($style)'
-
-[nodejs]
-symbol = " "
-style = "bg:lang"
-format = '[[ $symbol](fg:text bg:lang)]($style)'
 
 [c]
 symbol = " "
-style = "bg:lang"
-format = '[[ $symbol](fg:text bg:lang)]($style)'
-
-[lua]
-symbol = " "
-style = "bg:lang"
 format = '[[ $symbol](fg:text bg:lang)]($style)'
 
 [golang]
 symbol = " "
-style = "bg:lang"
 format = '[[ $symbol](fg:text bg:lang)]($style)'
 
 [java]
 symbol = " "
-style = "bg:lang"
 format = '[[ $symbol](fg:text bg:lang)]($style)'
 
 [kotlin]
 symbol = " "
-style = "bg:lang"
+format = '[[ $symbol](fg:text bg:lang)]($style)'
+
+[lua]
+symbol = " "
+format = '[[ $symbol](fg:text bg:lang)]($style)'
+
+[nodejs]
+symbol = " "
 format = '[[ $symbol](fg:text bg:lang)]($style)'
 
 [python]
 symbol = " "
-style = "bg:lang"
 format = '[[ $symbol(\(#$virtualenv\))](fg:text bg:lang)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:time"
 format = '[[  $time](fg:text bg:time)]($style)'
 
 [line_break]
