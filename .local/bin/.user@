@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+dest=$(basename $0)
+ssh $dest

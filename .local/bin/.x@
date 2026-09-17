@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+xdest=$(basename $0)
+dest=${xdest#?}
+ghostty -e $dest > /dev/null &
