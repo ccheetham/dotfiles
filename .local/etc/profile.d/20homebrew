@@ -17,7 +17,4 @@ bsync() {
   b cleanup || return 3
 }
 
-# TODO: this isn't brew specific
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 # vim: ft=zsh
