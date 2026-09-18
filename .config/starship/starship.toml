@@ -11,6 +11,15 @@ $directory\
 [](fg:path bg:vcs)\
 $git_branch\
 $git_status\
+$c\
+$golang\
+$nodejs\
+$java\
+$kotlin\
+$lua\
+$nodejs\
+$python\
+$rust\
 [](fg:vcs bg:time)\
 $time\
 [ ](fg:time)\
@@ -19,27 +28,25 @@ $line_break\
 ╰─ \
 $character """
 
-[os]
+[c]
+symbol = " "
+format = '[[ $symbol](fg:text bg:lang)]($style)'
+
+[character]
 disabled = false
-style = "bg:who fg:text"
+success_symbol = '[ ](fg:success)'
+error_symbol = '[ ](fg:error)'
+vimcmd_symbol = '[ ](fg:edit)'
+vimcmd_replace_one_symbol = '[ ](bold fg:edit_select)'
+vimcmd_replace_symbol = '[ ](bold fg:edit_select)'
+vimcmd_visual_symbol = '[ ](bold fg:edit_select)'
 
-[os.symbols]
-Alpine = ""
-Arch = "󰣇"
-Debian = "󰣚"
-Fedora = "󰣛"
-Gentoo = "󰣨"
-Linux = "󰌽"
-Macos = "󰀵"
-Raspbian = "󰐿"
-Ubuntu = "󰕈"
-Windows = ""
-
-[username]
-show_always = true
-style_user = "bg:who fg:text"
-style_root = "bg:who fg:text"
-format = '[ $user]($style)'
+[cmd_duration]
+disabled = false
+min_time_to_notify = 5000
+show_milliseconds = false
+show_notifications = false
+format = "[[$duration](fg:time italic red)]($style)"
 
 [directory]
 disabled = false
@@ -66,10 +73,6 @@ disabled = false
 modified = "${count}"
 format = '[[ $all_status$ahead_behind](fg:text bg:vcs)]($style)'
 
-[c]
-symbol = " "
-format = '[[ $symbol](fg:text bg:lang)]($style)'
-
 [golang]
 symbol = " "
 format = '[[ $symbol](fg:text bg:lang)]($style)'
@@ -82,6 +85,9 @@ format = '[[ $symbol](fg:text bg:lang)]($style)'
 symbol = " "
 format = '[[ $symbol](fg:text bg:lang)]($style)'
 
+[line_break]
+disabled = false
+
 [lua]
 symbol = " "
 format = '[[ $symbol](fg:text bg:lang)]($style)'
@@ -90,8 +96,40 @@ format = '[[ $symbol](fg:text bg:lang)]($style)'
 symbol = " "
 format = '[[ $symbol](fg:text bg:lang)]($style)'
 
+[os]
+disabled = false
+style = "bg:who fg:text"
+
+[os.symbols]
+Alpine = ""
+Arch = "󰣇"
+Debian = "󰣚"
+Fedora = "󰣛"
+Gentoo = "󰣨"
+Linux = "󰌽"
+Macos = "󰀵"
+Raspbian = "󰐿"
+Ubuntu = "󰕈"
+Windows = ""
+
+[palettes.me]
+edit         = "172"
+edit_select  = "123"
+error        = "124"
+lang         = "248"
+path         = "250"
+success      = "035"
+text         = "000"
+time         = "244"
+who          = "252"
+vcs          = "248"
+
 [python]
 symbol = " "
+format = '[[ $symbol(\(#$virtualenv\))](fg:text bg:lang)]($style)'
+
+[rust]
+symbol = "󱘗 "
 format = '[[ $symbol(\(#$virtualenv\))](fg:text bg:lang)]($style)'
 
 [time]
@@ -99,33 +137,8 @@ disabled = false
 time_format = "%R"
 format = '[[  $time](fg:text bg:time)]($style)'
 
-[line_break]
-disabled = false
-
-[character]
-disabled = false
-success_symbol = '[ ](fg:success)'
-error_symbol = '[ ](fg:error)'
-vimcmd_symbol = '[ ](fg:edit)'
-vimcmd_replace_one_symbol = '[ ](bold fg:edit_select)'
-vimcmd_replace_symbol = '[ ](bold fg:edit_select)'
-vimcmd_visual_symbol = '[ ](bold fg:edit_select)'
-
-[cmd_duration]
-disabled = false
-min_time_to_notify = 5000
-show_milliseconds = false
-show_notifications = false
-format = "[[$duration](fg:time italic red)]($style)"
-
-[palettes.me]
-edit         = "172"
-edit_select  = "123"
-error        = "124"
-lang         = "246"
-path         = "250"
-success      = "035"
-text         = "000"
-time         = "244"
-who          = "252"
-vcs          = "248"
+[username]
+show_always = true
+style_user = "bg:who fg:text"
+style_root = "bg:who fg:text"
+format = '[ $user]($style)'
