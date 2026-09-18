@@ -225,6 +225,9 @@ lost+found/
 # CUPS
 /.cups
 
+# Claude AI
+/.claude*
+
 # MySQL
 /.mysql_history
 
