@@ -322,3 +322,6 @@ lost+found/
 
 # Google auth
 /.boto
+
+# Docker Agent
+/.cagent
