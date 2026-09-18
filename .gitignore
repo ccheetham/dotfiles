@@ -325,3 +325,6 @@ lost+found/
 
 # Docker Agent
 /.cagent
+
+# Autodesk Fusion
+/autodesk-fusion/
