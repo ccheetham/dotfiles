@@ -5,10 +5,11 @@ touch $ME_XORG_SESSION_LOG
 
 xlog "starting session"
 
-xrandr -s $ME_XORG_RESOLUTION
-setxkbmap -option ctrl:swapcaps
-config_mice >> $ME_XORG_SESSION_LOG
-
-exec dbus-launch --exit-with-session i3
+if [[ $ME_OS != osx ]]; then
+  xrandr -s $ME_XORG_RESOLUTION
+  setxkbmap -option ctrl:swapcaps
+  config_mice >> $ME_XORG_SESSION_LOG
+  exec dbus-launch --exit-with-session i3
+fi
 
 # vim: ft=sh et sw=4 sts=4

@@ -5,11 +5,11 @@ Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
-#include "share/x/OneHalfDark.Xresources"
+#include "repos/catppuccin/xresources/themes/frappe.Xresources"
 
 ! -- basic xterm -------------------------------------------------------------
 
-xterm*faceName:             xft:Cascadia Code PL:pixelsize=14
+xterm*faceName:             xft:IosevkaTerm Nerd Font:pixelsize=16
 xterm*pointerMode:          1
 
 xterm*toolBar:              false
